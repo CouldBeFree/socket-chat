@@ -11,6 +11,10 @@ socket.on('messageFromServer', (dataFromServer) => {
     socket.emit('dataToServer', {data: "Data from the Client"})
 });
 
+socket.on('joined', msg => {
+    console.log(msg);
+});
+
 socket2.on('welcome', dataFromServer => {
     console.log(dataFromServer);
 });

@@ -17,6 +17,8 @@ io.on('connection', (socket) => {
     socket.on('dataToServer', (dataFromClient) => {
         console.log(dataFromClient);
     });
+    socket.join('level1');
+    socket.to('level1').emit('joined', `${socket.id} says I have joined level1 room`)
 });
 
 io.of('/admin').on('connection', socket => {
